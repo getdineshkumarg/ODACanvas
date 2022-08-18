@@ -14,7 +14,7 @@ spec:
       labels:
         app: {{.Release.Name}}-{{.Values.component.name}}
         impl: {{.Release.Name}}-pimadapaterapi
-        version: dineshdocker1988/pimadapter
+        version: dineshdocker1988-pimadapter
     spec:
       containers:
       - name: {{.Release.Name}}-pimadapaterapi
