@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Release.Name}}-pimadapaterapi
+  labels:
+    oda.tmforum.org/componentName: {{.Release.Name}}-{{.Values.component.name}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      impl: {{.Release.Name}}-pimadapaterapi
+  template:
+    metadata:
+      labels:
+        app: {{.Release.Name}}-{{.Values.component.name}}
+        impl: {{.Release.Name}}-pimadapaterapi
+        version: dineshdocker1988/pimadapter
+    spec:
+      containers:
+      - name: {{.Release.Name}}-pimadapaterapi
+        image: dineshdocker1988/pimadapter:0.1
+        env:
+        - name: RELEASE_NAME
+          value: {{.Release.Name}}           
+        - name: COMPONENT_NAME
+          value: {{.Release.Name}}-{{.Values.component.name}}           
+        imagePullPolicy: Always
+        ports:
+        - name: {{.Release.Name}}-paapi
+          containerPort: 8080
+        startupProbe:
+          httpGet:
+            path: /{{.Release.Name}}-{{.Values.component.name}}/tmf-api/pimadapater/v4/catalog 
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5          
+          failureThreshold: 30 
+         
