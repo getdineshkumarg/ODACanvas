@@ -27,7 +27,7 @@ spec:
   coreFunction:
     exposedAPIs: 
     - name: pimadapter
-      specification: https://raw.githubusercontent.com/tmforum-rand/Open_API_And_Data_Model/v4.0-Sprint-2020-03/apis/TMF720_Digital_Identity/swaggers/TMF720-DigitalIdentity-v4.0.0.swagger.json
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF637_ProductInventory/master/TMF637-ProductInventory-v4.0.0.swagger.json
       implementation: {{.Release.Name}}-pimadapter
       apitype: openapi
       path: /{{.Release.Name}}-{{.Values.component.name}}/tmf-api/pimadapter/v4
