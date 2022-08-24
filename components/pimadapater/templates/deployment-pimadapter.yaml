@@ -30,7 +30,7 @@ spec:
           containerPort: 8080
         startupProbe:
           httpGet:
-            path: /{{.Release.Name}}-{{.Values.component.name}}/tmf-api/pimadapater/v4/catalog 
+            path: /{{.Release.Name}}-{{.Values.component.name}}/tmf-api/productInventory/v4/product/10593005 
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 5          
