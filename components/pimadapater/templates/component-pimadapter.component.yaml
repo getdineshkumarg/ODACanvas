@@ -34,6 +34,8 @@ spec:
       developerUI: /{{.Release.Name}}-{{.Values.component.name}}/tmf-api/pimadapter/v4/api-docs
       port: 8080 
     dependentAPIs:
+    - name: party      
+      specification: https://raw.githubusercontent.com/tmforum-apis/TMF632_PartyManagement/master/TMF632-Party-v4.0.0.swagger.json 
   eventNotification:
     publishedEvents: []
     subscribedEvents: []
