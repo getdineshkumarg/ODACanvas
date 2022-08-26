@@ -1,9 +1,9 @@
 apiVersion: oda.tmforum.org/v1alpha4
 kind: component
 metadata:
-  name: {{.Release.Name}}-{{.Values.component.name}}
+  name: r1-ericsson-pim
   labels:
-    oda.tmforum.org/componentName: {{.Release.Name}}-{{.Values.component.name}}
+    oda.tmforum.org/componentName: r1-ericsson-pim
 spec:
   type: {{.Values.component.type}}
   selector:
