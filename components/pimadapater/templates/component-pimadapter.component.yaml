@@ -5,10 +5,10 @@ metadata:
   labels:
     oda.tmforum.org/componentName: r1-ericsson-pim
 spec:
-  type: {{.Values.component.type}}
+  type: TMFC005-productinventorymanagement
   selector:
     matchLabels:
-     oda.tmforum.org/componentName: {{.Release.Name}}-{{.Values.component.name}}
+     oda.tmforum.org/componentName: r1-ericsson-pim
   componentKinds:
   - group: core
     kind: Service    
@@ -16,7 +16,7 @@ spec:
     kind: PersistentVolumeClaim
   - group: apps
     kind: Deployment  
-  version: {{.Values.component.version}}
+  version: "0.0.1"
   description: "Simple Product Inventory Managment Adapter ODA-Component from Open-API reference implementation." 
   maintainers:
   - name: Dinesh Kumar
@@ -28,11 +28,12 @@ spec:
     exposedAPIs: 
     - name: pimadapter
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF637_ProductInventory/master/TMF637-ProductInventory-v4.0.0.swagger.json
-      implementation: {{.Release.Name}}-pimadapter
+      implementation: r1-prodinventoryapi
       apitype: openapi
       path: /{{.Release.Name}}-{{.Values.component.name}}/tmf-api/pimadapter/v4/
       developerUI: /{{.Release.Name}}-{{.Values.component.name}}/tmf-api/pimadapter/v4/api-docs
       port: 8080 
+    dependentAPIs:
   eventNotification:
     publishedEvents: []
     subscribedEvents: []
