@@ -1,14 +1,14 @@
 apiVersion: oda.tmforum.org/v1alpha4
 kind: component
 metadata:
-  name: r1-ericsson-pim
+  name: pim-pimadapaterapi
   labels:
-    oda.tmforum.org/componentName: r1-ericsson-pim
+    oda.tmforum.org/componentName: pim-pimadapaterapi
 spec:
   type: TMFC005-productinventorymanagement
   selector:
     matchLabels:
-     oda.tmforum.org/componentName: r1-ericsson-pim
+     oda.tmforum.org/componentName: pim-pimadapaterapi
   componentKinds:
   - group: core
     kind: Service    
@@ -28,10 +28,10 @@ spec:
     exposedAPIs: 
     - name: pimadapter
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF637_ProductInventory/master/TMF637-ProductInventory-v4.0.0.swagger.json
-      implementation: r1-prodinventoryapi
+      implementation: pim-pimadapaterapi
       apitype: openapi
-      path: /r1-prodinventoryapi/tmf-api/pimadapter/v4/
-      developerUI: /r1-prodinventoryapi/tmf-api/pimadapter/v4/api-docs
+      path: /pim-pimadapaterapi/tmf-api/pimadapter/v4/
+      developerUI: /pim-pimadapaterapi/tmf-api/pimadapter/v4/api-docs
       port: 8080 
     dependentAPIs: []     
   eventNotification:
@@ -49,6 +49,6 @@ spec:
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF669_PartyRole/master/TMF669-PartyRole-v4.0.0.swagger.json
       implementation: r1-partyroleapi
       apitype: openapi
-      path: /r1-prodinventoryapi/tmf-api/partyRoleManagement/v4
-      developerUI: /r1-prodinventoryapi/tmf-api/partyRoleManagement/v4/docs
+      path: /pim-pimadapaterapi/tmf-api/partyRoleManagement/v4
+      developerUI: /pim-pimadapaterapi/tmf-api/partyRoleManagement/v4/docs
       port: 8080
