@@ -30,8 +30,8 @@ spec:
       specification: https://raw.githubusercontent.com/tmforum-apis/TMF637_ProductInventory/master/TMF637-ProductInventory-v4.0.0.swagger.json
       implementation: pim-pimadapaterapi
       apitype: openapi
-      path: /pim-pimadapaterapi/tmf-api/pimadapter/v4/
-      developerUI: /pim-pimadapaterapi/tmf-api/pimadapter/v4/api-docs
+      path: /pim-pimadapaterapi/tmf-api/productInventory/v4/
+      developerUI: /pim-pimadapaterapi/tmf-api/productInventory/v4/api-docs
       port: 8080 
     dependentAPIs: []     
   eventNotification:
