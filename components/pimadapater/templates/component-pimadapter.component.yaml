@@ -38,17 +38,5 @@ spec:
     publishedEvents: []
     subscribedEvents: []
   management: []      
-  security:
-    controllerRole: Admin
-    securitySchemes:
-      bearerAuth:
-        type: http
-        scheme: bearer
-        bearerFormat: JWT
-    partyrole:
-      specification: https://raw.githubusercontent.com/tmforum-apis/TMF669_PartyRole/master/TMF669-PartyRole-v4.0.0.swagger.json
-      implementation: r1-partyroleapi
-      apitype: openapi
-      path: /pim-pimadapaterapi/tmf-api/partyRoleManagement/v4
-      developerUI: /pim-pimadapaterapi/tmf-api/partyRoleManagement/v4/docs
-      port: 8080
+  security: {}    
+    
